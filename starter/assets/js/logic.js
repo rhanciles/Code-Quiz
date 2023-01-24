@@ -12,11 +12,13 @@ start.addEventListener("click", function(event) {
 
   } if (status === "start") {
 
-        intro.setAttribute("class", "hide");
-        // If the card is clicked while the state is "hidden", we set .textContent to the number 
-        exam.setAttribute("class", "start");
-        // Using the dataset property, we change the state to visible because the user can now see the number
-        renderExam();
+    intro.setAttribute("class", "hide");
+    // If the card is clicked while the state is "hidden", we set .textContent to the number 
+    exam.setAttribute("class", "start");
+    // Using the dataset property, we change the state to visible because the user can now see the number
+    
+    renderOptions()
+    renderExam();
      
       } else {
        alert = "Please click the button to start"
