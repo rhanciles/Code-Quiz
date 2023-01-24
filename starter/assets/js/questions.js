@@ -19,6 +19,21 @@ var quiz5 = ["Commas", "Curly Brackets", "Quotes", "Parenthesis"];
 
 // var choices = {quest1: quiz1, quest2: quiz2, quest3: quiz3, quest4: quiz4, quest5: quiz5 }
 
+
+function renderExam(arr) {
+
+  for (var i = 0; i < arr.length; i++) {
+
+    console.log(arr[i]);
+    return arr[i];
+    
+    // let examOpt = arr[j];
+    // button.textContent = arr[j];
+    
+  }
+  console.log("---------");   
+}
+
 function renderOptions() {
   let ol = document.createElement("ol")
     let li = document.createElement("li");
@@ -29,27 +44,15 @@ function renderOptions() {
     li.appendChild(button);
 }
 
-function renderExam(arr) {
 
-  for (var j = 0; j < arr.length; j++) {
+// renderExam(quest1)
+// renderExam(quest2)
+// renderExam(quest3)
+// renderExam(quest4)
+// renderExam(quest5)
 
-    console.log(arr[j]);
-    
-    // let examOpt = arr[j];
-    // button.textContent = arr[j];
-    
-  }
-  console.log("---------");   
-}
-
-renderExam(quest1)
-renderExam(quest2)
-renderExam(quest3)
-renderExam(quest4)
-renderExam(quest5)
-
-renderExam(quiz1)
-renderExam(quiz2)
-renderExam(quiz3)
-renderExam(quiz4)
-renderExam(quiz5)
+// renderExam(quiz1)
+// renderExam(quiz2)
+// renderExam(quiz3)
+// renderExam(quiz4)
+// renderExam(quiz5)
