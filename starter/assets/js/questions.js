@@ -11,20 +11,19 @@ var questions = ["A very useful tool used during development and debugging for p
                 "Arrays in JavaScript can be used to store ________________?", 
                 "Strings values must be enclosed within __________________ when being assigned to variables?"];
 
-var questionChoice = [
-    ["JavaScript", "Terminal/Bash", "For Loops", "Console Log"],
-    ["Strings", "Booleans", "Alerts", "Numbers"],
-    ["Quotes", "Curley Brackets", "Parenthesis", "Square Brackets"],
-    ["Numbers & Strings", "Booleans", "Other Arrays", "All of the above"],
-    ["Commas", "Curly Brackets", "Quotes", "Parenthesis"]
-];
+var quiz1 = ["JavaScript", "Terminal/Bash", "For Loops", "Console Log"];
+var quiz2 = ["Strings", "Booleans", "Alerts", "Numbers"];
+var quiz3 = ["Quotes", "Curley Brackets", "Parenthesis", "Square Brackets"];
+var quiz4 = ["Numbers & Strings", "Booleans", "Other Arrays", "All of the above"];
+var quiz5 = ["Commas", "Curly Brackets", "Quotes", "Parenthesis"];
 
-var choices = Object.values(questionChoice)
+var choices = {quest: quiz1, quest: quiz2, quest: quiz3, quest: quiz4, quest: quiz5 }
 
 console.log(questions)
 console.log(questionChoice)
 console.log(Object.keys(questionChoice));
 console.log(Object.entries(questionChoice));
+
 
 
 function renderExam() {
@@ -42,8 +41,9 @@ function renderExam() {
     var button = document.createElement("button");
     var li = document.createElement("li");
 
-    for (var j = 0; j < choices.length; j++) {
-      var examOpt = choices[j];
+   
+    for (var j = 0; j < choices.quiz1.length; j++) {
+      var examOpt = choices[j].name;
       choiceList.appendChild(li);
       li.appendChild(button);
     button.textContent = examOpt;
