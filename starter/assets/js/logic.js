@@ -4,7 +4,9 @@ var intro = document.querySelector("#start-screen");
 var testPage = document.querySelector("#questions");
 var counter = document.querySelector("#time");
 var status = document.querySelectorAll(".start");
-
+var questionEL= document.querySelector("#question-title")
+var choicesEL=document.querySelector("#choices")
+var index=0
 var secondsLeft = 100;
 
 // Create timer to control the session,
@@ -23,6 +25,30 @@ function setTime() {
   }, 1000);
 }
 
+// Setup function to create buttons and call the porperties from the questionarr object
+function renderOptions() {
+ 
+  questionEL.textContent=questionsArr[index].question
+  
+    var button1 = document.createElement("button");
+    var button2 = document.createElement("button");
+    var button3 = document.createElement("button");
+    var button4 = document.createElement("button");
+  
+    button1.setAttribute("class", "choiceList");
+    button2.setAttribute("class", "choiceList");
+    button3.setAttribute("class", "choiceList");
+    button4.setAttribute("class", "choiceList");
+    
+    button1.textContent=questionsArr[index].choice1
+    button2.textContent=questionsArr[index].choice2
+    button3.textContent=questionsArr[index].choice3
+    button4.textContent=questionsArr[index].choice4
+
+    choicesEL.append(button1, button2, button3, button4)
+  }
+  
+
 // Add event listener to the start button,
 start.addEventListener("click", function(event) {
     var start = event.target;
@@ -37,6 +63,8 @@ start.addEventListener("click", function(event) {
     
  
     setTime();
+
+    renderOptions()
      
       } else {
        alert = "Please click the button to start";
