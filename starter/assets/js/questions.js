@@ -1,55 +1,49 @@
 
-var examTop = document.querySelector("#question-title");
-var examBtm = document.querySelector("#choices");
-var results = document.querySelector("#end-screen");
-var feedback = document.querySelector("#feedback");
-var skip = document.querySelector("#next-question");
+// Create an object array of the questions and answers.
+var questionsArr=[
+  {
+    question: "Commonly used data types do not include?",
+    choice1:"Strings",
+    choice2:"Booleans", 
+    choice3:"Alerts",
+    choice4:"Numbers",
+    correct:"Alerts"
+  },
 
-var quest1 = ["A very useful tool used during development and debugging for printing content to the debugger is?"]; 
-var quest2 = ["Commonly used data types do not include?"]; 
-var quest3 = ["The condition in an if / else statement is enclosed with ________________?"];
-var quest4 = ["Arrays in JavaScript can be used to store ________________?"]; 
-var quest5 = ["Strings values must be enclosed within __________________ when being assigned to variables?"];
+  {
+    question: "A very useful tool used during development and debugging for printing content to the debugger is?",
+    choice1:"JavaScript",
+    choice2:"Terminal/Bash", 
+    choice3:"For Loops", 
+    choice4:"Console Log",
+    correct:"Console Log"
+  },
 
-var quiz1 = ["JavaScript", "Terminal/Bash", "For Loops", "Console Log"];
-var quiz2 = ["Strings", "Booleans", "Alerts", "Numbers"];
-var quiz3 = ["Quotes", "Curley Brackets", "Parenthesis", "Square Brackets"];
-var quiz4 = ["Numbers & Strings", "Booleans", "Other Arrays", "All of the above"];
-var quiz5 = ["Commas", "Curly Brackets", "Quotes", "Parenthesis"];
+  {
+    question: "The condition in an if / else statement is enclosed with ________________?",
+    choice1:"Quotes",
+    choice2:"Curley Brackets", 
+    choice3:"Parenthesis",
+    choice4:"Square Brackets",
+    correct:"Curley Brackets"
+  },
 
-// var choices = {quest1: quiz1, quest2: quiz2, quest3: quiz3, quest4: quiz4, quest5: quiz5 }
+  {
+    question: "Arrays in JavaScript can be used to store ________________?",
+    choice1:"Numbers & Strings",
+    choice2:"Booleans",
+    choice3:"Other Arrays",
+    choice4:"All of the above",
+    correct:"All of the above"
+  },
 
-function renderOptions() {
-  let ol = document.createElement("ol")
-    let li = document.createElement("li");
-    let button = document.createElement("button");
-    examBtm.appendChild(ol)
-    ol.setAttribute("id", "choiceList")
-    ol.appendChild(li);
-    li.appendChild(button);
-}
-
-function renderExam(arr) {
-
-  for (var j = 0; j < arr.length; j++) {
-
-    console.log(arr[j]);
-    
-    // let examOpt = arr[j];
-    // button.textContent = arr[j];
-    
+  {
+    question: "Strings values must be enclosed within __________________ when being assigned to variables?",
+    choice1:"Commas", 
+    choice2:"Curly Brackets",
+    choice3:"Quotes",
+    choice4:"Parenthesis",
+    correct:"Quotes"
   }
-  console.log("---------");   
-}
+]
 
-renderExam(quest1)
-renderExam(quest2)
-renderExam(quest3)
-renderExam(quest4)
-renderExam(quest5)
-
-renderExam(quiz1)
-renderExam(quiz2)
-renderExam(quiz3)
-renderExam(quiz4)
-renderExam(quiz5)
