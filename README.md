@@ -12,7 +12,6 @@ This is a simplified version of a timed coding quiz with multiple-choice questio
 The following animation demonstrates the application functionality:
 
 ![Animation of code quiz. Presses button to start quiz. Clicks the button for the answer to each question, displays if answer was correct or incorrect. Quiz finishes and displays high scores. User adds their intials, then clears their intials and starts over.](./assets/08-web-apis-challenge-demo.gif)
-
 ## Usage
 This Repo is made up of the core files and folders related to the task. I have added comments to all the relevant sections of the code, highlighting key areas and the expected result derived from it. The content comprise only that related to the task and I have kept the interface very simple and straight forward to use. It also contains a folder with an animated image of the mock-up depicting the final product. Simply click on the button to start, follow the prompts, and refresh the page to start over; it’s that easy. Click here to begin.
 
