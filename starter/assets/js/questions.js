@@ -44,10 +44,9 @@ var questionsArr=[
     choice3:"Quotes",
     choice4:"Parenthesis",
     correct:"Quotes"
-  },
-
-  {
-    choice1:"Proceed"
   }
+
 ]
+
+console.log(questionsArr)
 
