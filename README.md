@@ -1,5 +1,5 @@
 # Code Quiz
-_A coding assessment test._
+_A coding assessment App_
 
 ## Overview
 Front-end web development is a craft that requires you to challenge yourself daily. Whether it’s a job interview, a new project, honing your skills to perform beyond the expectations of your client is the way to go. In this task, I am recreating a typical coding assessment platform that is a combination of multiple-choice questions and interactive coding Challenges. 
