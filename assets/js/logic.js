@@ -7,8 +7,11 @@ var roundUp = document.querySelector("#end-screen");
 var counter = document.querySelector("#time");
 var status = document.querySelectorAll(".start");
 var questionEL= document.querySelector("#question-title");
+var finalScore=document.querySelector("#final-score")
 var choicesEL=document.querySelector("#choices");
-var finalScore=document.querySelector("#final-score");
+var submitBtn = document.querySelector("#submit");
+var audioYes = new Audio("correct.wav")
+var audioNo = new Audio("incorrect.wav")
 var index = 0;
 var score = 0
 var clickCounter = 0
@@ -61,6 +64,8 @@ function checkAnswer(answer){
     score += 1
     choicesEL.innerHTML = "";
     feedBack.innerHTML = "Correct";
+    audioYes.play()
+    
     renderOptions();
 
   } else {
@@ -69,6 +74,8 @@ function checkAnswer(answer){
     choicesEL.innerHTML = "";
     feedBack.innerHTML = "Wrong - Ten seconds is taken of your time";
     secondsLeft = secondsLeft - 10;
+    audioNo.play()
+    
     renderOptions();
   }
 }
@@ -82,8 +89,19 @@ function scores () {
   finalScore.innerHTML = score;
 }
 
+function restart () {
+
+  choicesEL.innerHTML = "";
+
+  intro.setAttribute("class", "start");
+  // If the button is clicked while the class is "hide", we set the class to "start"
+  roundUp.setAttribute("class", "hide");
+  // If the button is clicked while the class is "hide", we set the class to "start"
+
+}
+
 // Add event listener to the start button,
-start.addEventListener("click", function(event) {
+intro.addEventListener("click", function(event) {
     var start = event.target;
 
   if (start.matches("button") === true) {
@@ -101,13 +119,13 @@ start.addEventListener("click", function(event) {
     renderOptions();
      
       } else {
-       alert = "Please click the button to start";
+       alert("Please click the button to start");
     }
 });
 
   
 // Set event listener to index click options of the user.
-choicesEL.addEventListener("click",()=>{
+choicesEL.addEventListener("click",()=> {
   var clicked = this.event.target.textContent;
   console.log(clicked);
   checkAnswer(clicked);
@@ -120,4 +138,26 @@ choicesEL.addEventListener("click",()=>{
     scores();
   }
 })
+
+submitBtn.addEventListener("click", ()=> {
+  var clicked = this.event.target.textContent;
+ 
+  restart(clicked);
+
+  var initials = document.querySelector("#initials").value;
+  var finalTally = document.querySelector("#final-score").value;
+  
+  if (initials === " ") {
+
+    feedBack.innerHTML = "Please enter your initials";
+  
+  } else {
+    
+    localStorage.setItem("initials", initials);
+    localStorage.setItem("finalTally", finalTally);
+
+    restart()
+
+  }
+});
 
