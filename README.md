@@ -11,7 +11,7 @@ This is a simplified version of a timed coding quiz with multiple-choice questio
 ## Mock-Up
 ![The following animation demonstrates the application functionality:](./assets/images/08-web-apis-challenge-demo.gif)
 
-Press the button to start quiz and click to select your answer to each question. Alerts at the bottom displays if you answer was correct or incorrect and takes 10 seconds of your time if it’s the latter. The quiz finishes when you complete the questions or run out of time.
+Press the button to start quiz and click to select your answer to each question. Alerts at the bottom displays if your answer was correct or incorrect and takes 10 seconds of your time if it’s the latter. The quiz finishes when you complete the questions or run out of time.
 
 ## Usage
 This Repo is made up of the core files and folders related to the task. I have added comments to all the relevant sections of the code, highlighting key areas and the expected result derived from it. The content comprise only that related to the task and I have kept the interface very simple and straight forward to use. It also contains a folder with an animated image of the mock-up depicting the final product. Simply click on the button to start, follow the prompts, and refresh the page to start over; it’s that easy. Click here to begin.
