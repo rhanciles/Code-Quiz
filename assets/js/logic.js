@@ -34,7 +34,7 @@ function setTime() {
   }, 1000);
 }
 
-// Setup function to create buttons and call the porperties from the questionarr object
+// Setup function to create buttons and call the porperties from the questionair object
 function renderOptions() {
 
   if (index > 4) {
@@ -62,7 +62,7 @@ function renderOptions() {
     choicesEL.append(button1, button2, button3, button4);
   }
 
-// This verifies if the answer is correct and clears the page
+// This verifies if the answer is correct and clears the page for the next question.
 function checkAnswer(answer){
   console.log(answer, "");
   if(answer === questionsArr[index].correct){
@@ -97,6 +97,7 @@ function scores () {
   finalScore.innerHTML = score;
 }
 
+// Restars the quiz.
 function restart () {
 
   window.location.href = './index.html';
