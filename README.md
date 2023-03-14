@@ -10,6 +10,7 @@ This is a simplified version of a timed coding quiz with multiple-choice questio
   
 ## Mock-Up
 ![The following animation demonstrates the application functionality:](./assets/images/08-web-apis-challenge-demo.gif)
+
 Press the button to start quiz and click to select your answer to each question. Alerts at the bottom displays if you answer was correct or incorrect and takes 10 seconds of your time if it’s the latter. The quiz finishes when you complete the questions or run out of time.
 
 ## Usage
