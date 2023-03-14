@@ -27,6 +27,7 @@ function setTime() {
     if(secondsLeft <= 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
+      scores();
     
     }
 
@@ -35,6 +36,11 @@ function setTime() {
 
 // Setup function to create buttons and call the porperties from the questionarr object
 function renderOptions() {
+
+  if (index > 4) {
+    index = 0;
+    scores();
+  }
  
   questionEL.textContent=questionsArr[index].question;
   
@@ -60,23 +66,23 @@ function renderOptions() {
 function checkAnswer(answer){
   console.log(answer, "");
   if(answer === questionsArr[index].correct){
-    index++
-    score += 1
+    index++;
+    score += 1;
     choicesEL.innerHTML = "";
     questionEL.innerHTML = "";
     feedBack.innerHTML = "Correct";
-    audioYes.play()
+    audioYes.play();
     
     renderOptions();
 
   } else {
-    index++
-    score -= 1
+    index++;
+    score -= 1;
     choicesEL.innerHTML = "";
     questionEL.innerHTML = "";
     feedBack.innerHTML = "Wrong - Ten seconds is taken of your time";
     secondsLeft = secondsLeft - 10;
-    audioNo.play()
+    audioNo.play();
     
     renderOptions();
   }
@@ -92,6 +98,8 @@ function scores () {
 }
 
 function restart () {
+
+  window.location.href = './index.html';
 
   choicesEL.innerHTML = "";
 
@@ -134,13 +142,12 @@ choicesEL.addEventListener("click",()=> {
   clickCounter += 1;
   console.log(clickCounter);
 
-  if (clickCounter >= 4) {
-    clickCounter = 0;
-    scores();
-  } else if (secondsLeft <= 1) {
-    clickCounter = 0;
-    scores();
-  }
+  // if (clickCounter >= 5) {
+  //   scores();
+  // } else if (secondsLeft <= 0) {
+  //   feedBack.innerHTML = "You are out of time";
+  //   scores();
+  // }
 })
 
 submitBtn.addEventListener("click", ()=> {
@@ -149,7 +156,7 @@ submitBtn.addEventListener("click", ()=> {
   restart(clicked);
 
   var initials = document.querySelector("#initials").value;
-  var finalTally = document.querySelector("#final-score").innerText;
+  // var finalTally = document.querySelector("#final-score").innerText;
   
   if (initials === " ") {
 
@@ -158,10 +165,11 @@ submitBtn.addEventListener("click", ()=> {
   } else {
     
     localStorage.setItem("initials", initials);
-    localStorage.setItem("finalTally");
+    localStorage.setItem("finalTally", score);
 
-    restart()
+    restart();
 
   }
+
 });
 

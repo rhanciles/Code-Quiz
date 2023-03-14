@@ -25,7 +25,7 @@ var questionsArr=[
     choice2:"Curley Brackets", 
     choice3:"Parenthesis",
     choice4:"Square Brackets",
-    correct:"Curley Brackets"
+    correct:"Parenthesis"
   },
 
   {
