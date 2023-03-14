@@ -12,12 +12,12 @@ function renderScores() {
     var finalTally = localStorage.getItem("finalTally");
 
     var details = document.querySelector("#details");
-    details.textContent = initials + " - " + finalTally
+    details.textContent = "Player: " + initials + " | " + "Score: " + finalTally;
   }
   
-  renderScores()
+  renderScores();
 
   clearScores.addEventListener("click", function() {
     details.textContent = " ";
 
-  })
+  });
