@@ -10,8 +10,8 @@ var questionEL= document.querySelector("#question-title");
 var finalScore=document.querySelector("#final-score")
 var choicesEL=document.querySelector("#choices");
 var submitBtn = document.querySelector("#submit");
-var audioYes = new Audio("correct.wav")
-var audioNo = new Audio("incorrect.wav")
+var audioYes = new Audio("./assets/sfx/correct.wav")
+var audioNo = new Audio("./assets/sfx/incorrect.wav")
 var index = 0;
 var score = 0
 var clickCounter = 0
@@ -24,7 +24,7 @@ function setTime() {
     secondsLeft--;
     counter.textContent = secondsLeft;
 
-    if(secondsLeft <= 1) {
+    if(secondsLeft <= 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
     
@@ -63,6 +63,7 @@ function checkAnswer(answer){
     index++
     score += 1
     choicesEL.innerHTML = "";
+    questionEL.innerHTML = "";
     feedBack.innerHTML = "Correct";
     audioYes.play()
     
@@ -72,6 +73,7 @@ function checkAnswer(answer){
     index++
     score -= 1
     choicesEL.innerHTML = "";
+    questionEL.innerHTML = "";
     feedBack.innerHTML = "Wrong - Ten seconds is taken of your time";
     secondsLeft = secondsLeft - 10;
     audioNo.play()
@@ -133,8 +135,10 @@ choicesEL.addEventListener("click",()=> {
   console.log(clickCounter);
 
   if (clickCounter >= 4) {
+    clickCounter = 0;
     scores();
   } else if (secondsLeft <= 1) {
+    clickCounter = 0;
     scores();
   }
 })
@@ -145,7 +149,7 @@ submitBtn.addEventListener("click", ()=> {
   restart(clicked);
 
   var initials = document.querySelector("#initials").value;
-  var finalTally = document.querySelector("#final-score").value;
+  var finalTally = document.querySelector("#final-score").innerText;
   
   if (initials === " ") {
 
@@ -154,7 +158,7 @@ submitBtn.addEventListener("click", ()=> {
   } else {
     
     localStorage.setItem("initials", initials);
-    localStorage.setItem("finalTally", finalTally);
+    localStorage.setItem("finalTally");
 
     restart()
 
