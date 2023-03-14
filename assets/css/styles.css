@@ -1,3 +1,13 @@
+html {
+  width: 80vw;
+  height: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 0px 10px;
+  border: 1px double black;
+  
+}
+
 body {
   font-family: Arial;
   font-size: 120%;
@@ -68,8 +78,8 @@ li:nth-child(odd) {
 }
 
 .scores {
-  position: absolute;
-  top: 10px;
+  position: relative;
+  top: 15px;
   left: 10px;
 }
 
@@ -83,7 +93,8 @@ li:nth-child(odd) {
 }
 
 .timer {
-  position: absolute;
-  top: 10px;
+  position: relative;
+  float: right;
+  top: -5px;
   right: 10px;
 }
